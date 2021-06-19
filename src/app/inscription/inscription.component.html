@@ -1,0 +1,43 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+     <b>S'inscrire</b>
+    </div>
+
+    <!-- Login Form -->
+    <form #myform="ngForm">
+      <input type="text" required  [(ngModel)]="user.nom"   id="nom" class="fadeIn second" name="n" placeholder="nom">
+      <input type="text" id="tel" required  [(ngModel)]="user.tel" name="tel" class="fadeIn second" name="telephone" placeholder="telephone">
+      <input type="text" id="adresse" required [(ngModel)]="user.adresse" class="fadeIn second" name="adresse" placeholder="Adresse">
+      <input type="text" id="login" required [(ngModel)]="user.login" class="fadeIn second" name="login" placeholder="login">
+
+      <input type="password" id="password" required [(ngModel)]="user.mdp" class="fadeIn third" name="mdp" placeholder="mot de passe">
+      <br>  Je suis :   <select class="form-control" name="gr" [(ngModel)]="user.grade" aria-label="Default select example" >
+        <br>
+
+        <option value="user">ouvrier</option>
+        <option value="visiteur">visiteur</option>
+      
+    </select>
+    <br>
+    <br>
+
+<input type="submit"  (click)="adduser()"  class="fadeIn fourth" value="Inscription">
+  
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="">Déjà membre?</a>
+    </div>
+
+  </div>
+</div>

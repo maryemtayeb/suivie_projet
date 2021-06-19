@@ -1,0 +1,64 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Liste des employées</h4>
+                      <p class="card-category"> Vous trouvez ici l'archive du staff </p>
+                  </div>
+
+                  <div class="card-body">
+                      <br><br>
+                      <input type="text" class="form-control" placeholder="Rechercher" [(ngModel)]="query" id="listSearch">
+
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                 
+                                  <th>
+                                      Nom
+                                  </th>
+                                  <th>
+                                      Adresse
+                                  </th>
+                                  <th>
+                                      Téléphone
+                                  </th>
+                                  <th>
+                                      Grade
+                                  </th>
+                                  <th *ngIf="grade=='admin'" >
+                                      Action
+                                  </th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let user of users ">
+                                     
+                                      <td>
+                                          {{user.nom}}
+                                      </td>
+                                      <td>
+                                          {{user.adresse}}
+                                      </td>
+                                      <td>
+                                          {{user.tel}}
+                                      </td>
+                                      <td>
+                                          {{user.grade}}
+                                      </td>
+                                      <td *ngIf="grade=='admin'">
+                                          <a class="btn btn-danger" (click)="delete(user.id)">Supprimer</a>
+                                      </td>
+                                  </tr>
+                                 
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        
+      </div>
+  </div>
+</div>
